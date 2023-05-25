@@ -9,15 +9,19 @@ from dash.dependencies import Input, Output
 import pandas as pd
 import plotly.express as px
 import json
+import os
 
+dirname = os.path.dirname(__file__)
+csv_file = os.path.join(dirname, 'data/census.csv')
+geojson_file = os.path.join(dirname, 'data/census.geojson')
 # Load Data
-df = pd.read_csv('./data/census.csv')
+df = pd.read_csv(csv_file)
 # Select population columns
 population_columns = ['NAMELSAD10','TOTAL_POPULATION','WHITE', 'BLACK', 'AMER-INDIAN', 'ASIAN', 'HAWAIAN-PI', 'OTHER', 'TWO_OR_MORE_RACE', 'HISPANIC_OR_LATINO_OF_ANY_RACE']
 df_population = df[population_columns].copy()
 
 # Load GeoJSON data 
-with open(r'./data/census.geojson') as file:
+with open(geojson_file) as file:
     counties = json.load(file)
 
 # Initialize the Dash app
