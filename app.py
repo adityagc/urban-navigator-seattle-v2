@@ -59,4 +59,4 @@ def update_choropleth_map(selected_race):
     return fig
 
 # Run the app
-app.run_server(debug=True, port=8052)
+app.run_server()
