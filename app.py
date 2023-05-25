@@ -281,7 +281,7 @@ import plotly.express as px
 import json
 
 # Load GeoJSON data 
-with open(r'C:/Users/stlp/Downloads/A_Census_Tract_(2010)_Profile_ACS_5-year_Estimates_2013-2017.geojson') as file:
+with open(r'data/A_Census_Tract_(2010)_Profile_ACS_5-year_Estimates_2013-2017.geojson') as file:
     counties = json.load(file)
 
 # Initialize the Dash app
